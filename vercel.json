@@ -4,7 +4,7 @@
   "framework": "nextjs",
   "buildCommand": "next build",
   "devCommand": "next dev",
-  "installCommand": "npm install",
+  "installCommand": "npm ci",
   "cleanUrls": true,
   "trailingSlash": false,
   "headers": [
