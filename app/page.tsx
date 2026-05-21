@@ -2,6 +2,7 @@ import SeatAllocationForm from "@/components/ui/SeatAllocationForm";
 import Navbar from "@/components/ui/Navbar";
 import ResearchSection from "@/components/ui/ResearchSection";
 import ArchitectureSection from "@/components/ui/ArchitectureSection";
+import GovernanceSection from "@/components/ui/GovernanceSection";
 
 export default function Home() {
   return (
@@ -17,63 +18,28 @@ export default function Home() {
           <p className="mt-10 text-xs uppercase tracking-ultra text-ink-light">
             Sovereign Risk Intelligence
           </p>
+          <p className="mt-6 text-sm font-light leading-body text-ink-light max-w-md mx-auto">
+            Talavidus is a macro technology firm that builds sovereign‑risk
+            engines for institutional allocators and reserve managers.
+          </p>
 
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-6">
+          <div className="mt-14 flex flex-col sm:flex-row items-center justify-center gap-5">
             <a
-              href="#seat-allocation"
-              className="group relative inline-flex items-center justify-center text-center border font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo overflow-clip border-ink text-white hover:bg-transparent hover:text-ink"
+              href="#allocation"
+              className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink"
             >
-              <span className="relative z-10">Request Allocation</span>
+              Request Allocation
             </a>
             <a
-              href="#prescient-engine"
-              className="group relative inline-flex items-center justify-center text-center border font-sans h-14 bg-transparent px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo overflow-clip border-border-dark text-ink hover:border-ink"
+              href="#engine"
+              className="inline-flex items-center justify-center text-center font-sans h-14 bg-transparent px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-border-dark text-ink hover:border-ink"
             >
-              <span className="relative z-10">Learn about the Prescient Engine</span>
+              Learn about the Prescient Engine
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-container mx-auto px-8 md:px-16">
-        <div className="w-full h-px bg-border-dark" />
-      </div>
-
-      {/* The Problem + Solution */}
-      <section className="py-32 md:py-48 px-8 md:px-16">
-        <div className="max-w-container mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
-            <div className="lg:col-span-5">
-              <p className="text-xs uppercase tracking-ultra text-ink-light mb-6">
-                Institutional Context
-              </p>
-              <h2 className="font-serif text-3xl md:text-5xl font-light leading-heading tracking-tight text-ink">
-                What Traditional Macro Processes Miss
-              </h2>
-            </div>
-            <div className="lg:col-span-7 space-y-8">
-              <p className="text-base font-light leading-body text-ink-light max-w-prose">
-                Discretionary macro relies on narrative coherence: a story
-                about inflation, a conviction on rates, a read on political
-                risk. These stories are persuasive in committee rooms, but
-                they fracture when regimes shift. The underlying data —
-                sovereign balance sheets, cross‑border flow anomalies, term
-                structure stress — often contradicts the consensus view
-                weeks before the narrative breaks.
-              </p>
-              <p className="text-base font-light leading-body text-ink-light max-w-prose">
-                Talavidus builds sovereign risk telemetry and regime‑aware
-                allocation frameworks that surface these contradictions
-                early. The Prescient Engine measures sovereign curves, FX
-                misalignments, rates volatility, and macro data coherence
-                across horizons from three months to five years. Outputs
-                are signals, risk corridors, and deployment suggestions
-                designed to integrate into existing governance — not to
-                replace it.
-              </p>
-            </div>
-          </div>
+          <p className="mt-4 text-[11px] text-ink-lighter tracking-body">
+            For institutional entities and reserve managers.
+          </p>
         </div>
       </section>
 
@@ -84,14 +50,14 @@ export default function Home() {
 
       {/* The Prescient Engine */}
       <section
-        id="prescient-engine"
+        id="engine"
         className="py-32 md:py-48 px-8 md:px-16"
       >
         <div className="max-w-container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             <div className="lg:col-span-5">
               <p className="text-xs uppercase tracking-ultra text-ink-light mb-6">
-                Flagship Product
+                Engine
               </p>
               <h2 className="font-serif text-3xl md:text-5xl font-light leading-heading tracking-tight text-ink">
                 The Prescient Engine
@@ -99,35 +65,57 @@ export default function Home() {
             </div>
             <div className="lg:col-span-7 space-y-8">
               <p className="text-base font-light leading-body text-ink-light max-w-prose">
-                The Prescient Engine is a proprietary analytical system for
-                sovereign risk calibration and macro regime detection. It
-                operates on principles of unyielding precision and zero
-                redundancy, transforming raw intelligence into decisive
-                capital positioning.
+                The Prescient Engine ingests sovereign curves, FX regimes,
+                rates volatility, macro series, and balance‑sheet telemetry
+                as one system. It reads geopolitical signals alongside
+                quantitative data to detect regime transitions and stress
+                paths — not intraday moves, but structural inflections that
+                alter the risk landscape over quarters and years.
               </p>
               <p className="text-base font-light leading-body text-ink-light max-w-prose">
-                Where conventional models react to headline surprises, the
-                Engine anticipates regime transitions by monitoring
-                petabytes of sovereign data, market microstructure, and
-                geopolitical telemetry. Its architecture spans sovereign
-                curves, FX regimes, rates volatility, and balance‑sheet
-                stress indicators — distilling asymmetric positioning
-                opportunities through rigorous quantitative frameworks.
+                Output is structured for institutional governance: regime
+                probability states, risk corridors calibrated to mandate
+                constraints, and allocation scaffolds that can be reviewed,
+                challenged, and overridden by an investment committee.
+                Every suggestion carries attribution to its underlying
+                indicators, documented confidence intervals, and known
+                failure modes.
               </p>
-              <p className="text-base font-light leading-body text-ink-light max-w-prose">
-                Output is structured for institutional consumption: regime
-                probability signals, risk corridors calibrated to mandate
-                constraints, and reserve deployment suggestions with full
-                attribution. Every output is explainable to an investment
-                committee and auditable for compliance review.
-              </p>
+
+              {/* Facts row */}
+              <div className="grid grid-cols-3 gap-6 pt-6 border-t border-border">
+                <div>
+                  <p className="text-[10px] uppercase tracking-ultra text-ink-lighter mb-2">
+                    Universe
+                  </p>
+                  <p className="text-sm font-light text-ink">
+                    Sovereign curves, FX, rates, macro data, balance sheets
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-ultra text-ink-lighter mb-2">
+                    Horizon
+                  </p>
+                  <p className="text-sm font-light text-ink">
+                    Regime shifts and stress paths (3 months to 5 years)
+                  </p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-ultra text-ink-lighter mb-2">
+                    Output
+                  </p>
+                  <p className="text-sm font-light text-ink">
+                    Regime states, risk corridors, allocation scaffolds
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="mt-32 grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-12">
             <div className="border-t border-border pt-10">
               <h3 className="text-sm font-sans font-medium tracking-section uppercase text-ink">
-                Sovereign Telemetry
+                Sovereign risk telemetry
               </h3>
               <p className="mt-6 text-sm font-light leading-body text-ink-light">
                 Real‑time calibration of systemic exposure across sovereign
@@ -137,7 +125,7 @@ export default function Home() {
             </div>
             <div className="border-t border-border pt-10">
               <h3 className="text-sm font-sans font-medium tracking-section uppercase text-ink">
-                Regime Calibration
+                Regime‑aware positioning
               </h3>
               <p className="mt-6 text-sm font-light leading-body text-ink-light">
                 Probabilistic regime detection across inflation, growth,
@@ -147,12 +135,11 @@ export default function Home() {
             </div>
             <div className="border-t border-border pt-10">
               <h3 className="text-sm font-sans font-medium tracking-section uppercase text-ink">
-                Deployment Frameworks
+                Governed architecture
               </h3>
               <p className="mt-6 text-sm font-light leading-body text-ink-light">
-                Sequenced reserve deployment into regime‑critical
-                inflection points, mapped to existing mandate constraints
-                and liquidity requirements.
+                Every output is versioned, attributed, and auditable.
+                Committees retain full discretion and override authority.
               </p>
             </div>
           </div>
@@ -164,20 +151,8 @@ export default function Home() {
         <div className="w-full h-px bg-border-dark" />
       </div>
 
-      {/* Research & Evidence */}
-      <section className="py-32 md:py-48 px-8 md:px-16 bg-surface">
-        <div className="max-w-container mx-auto">
-          <ResearchSection />
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="max-w-container mx-auto px-8 md:px-16">
-        <div className="w-full h-px bg-border-dark" />
-      </div>
-
-      {/* Architecture & Governance */}
-      <section className="py-32 md:py-48 px-8 md:px-16">
+      {/* Architecture */}
+      <section id="architecture" className="py-32 md:py-48 px-8 md:px-16 bg-surface">
         <div className="max-w-container mx-auto">
           <ArchitectureSection />
         </div>
@@ -188,29 +163,56 @@ export default function Home() {
         <div className="w-full h-px bg-border-dark" />
       </div>
 
+      {/* Research & Evidence */}
+      <section id="research" className="py-32 md:py-48 px-8 md:px-16">
+        <div className="max-w-container mx-auto">
+          <ResearchSection />
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-container mx-auto px-8 md:px-16">
+        <div className="w-full h-px bg-border-dark" />
+      </div>
+
+      {/* Governance */}
+      <section className="py-32 md:py-48 px-8 md:px-16 bg-surface">
+        <div className="max-w-container mx-auto">
+          <GovernanceSection />
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="max-w-container mx-auto px-8 md:px-16">
+        <div className="w-full h-px bg-border-dark" />
+      </div>
+
       {/* Seat Allocation */}
-      <section id="seat-allocation" className="py-32 md:py-48 px-8 md:px-16 bg-surface">
+      <section id="allocation" className="py-32 md:py-48 px-8 md:px-16">
         <div className="max-w-container mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
             <div className="lg:col-span-5">
               <p className="text-xs uppercase tracking-ultra text-ink-light mb-6">
-                Institutional Access
+                Allocation
               </p>
               <h2 className="font-serif text-3xl md:text-5xl font-light leading-heading tracking-tight text-ink">
-                Request Seat Allocation
+                Seat allocation<br />process
               </h2>
-              <div className="mt-10 space-y-6 text-base font-light leading-body text-ink-light">
+              <p className="mt-8 text-sm font-medium tracking-section uppercase text-ink">
+                Access by institutional mandate
+              </p>
+              <div className="mt-8 space-y-6 text-base font-light leading-body text-ink-light">
                 <p>
-                  Access to the Prescient Engine is allocated exclusively
-                  to qualifying institutional entities. Each seat
-                  represents a binding position within our operational
-                  architecture, not a subscription.
+                  Access to the Prescient Engine is allocated by seat, not
+                  by subscription. Each seat is provisioned for a specific
+                  institutional entity and tied to its mandate and
+                  governance structure.
                 </p>
                 <p>
-                  Allocation decisions are made by Talavidus on a
-                  rolling basis, subject to internal review, regulatory
-                  obligations, and capacity constraints. Submission
-                  constitutes a non‑binding expression of interest.
+                  Submissions are non‑binding expressions of interest.
+                  Allocation is capacity‑constrained and subject to
+                  internal review, regulatory obligations, and compliance
+                  verification in each relevant jurisdiction.
                 </p>
                 <p className="text-sm text-ink-lighter">
                   Nothing on this site constitutes an offer or
@@ -239,7 +241,7 @@ export default function Home() {
       >
         <div className="max-w-container mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-            <div className="md:col-span-6">
+            <div className="md:col-span-5">
               <p className="font-serif text-lg tracking-wide text-ink mb-4">
                 Talavidus
               </p>
@@ -248,17 +250,35 @@ export default function Home() {
                 risk intelligence and institutional capital allocation.
               </p>
             </div>
-            <div className="md:col-span-6 md:text-right">
+            <div className="md:col-span-4 md:col-start-9 md:text-right">
               <p className="text-xs font-light text-ink-lighter tracking-body">
                 &copy; 2025 Talavidus Limited. All rights reserved.
               </p>
-              <p className="mt-4 text-xs font-light text-ink-lighter tracking-body max-w-sm md:ml-auto">
+              <p className="mt-4 text-xs font-light text-ink-lighter tracking-body">
                 Talavidus Limited is regulated in all jurisdictions in
-                which it operates. This website does not constitute an
-                offer to contract. Nothing described herein is a
-                solicitation. Capabilities are subject to jurisdictional
-                constraints, data availability, and model limitations.
+                which it operates. Nothing on this site constitutes
+                investment advice, an offer, or a solicitation to transact.
               </p>
+              <div className="mt-6 flex md:justify-end gap-6">
+                <a
+                  href="#"
+                  className="text-xs uppercase tracking-ultra text-ink-lighter transition-colors duration-300 hover:text-ink"
+                >
+                  Jurisdictions
+                </a>
+                <a
+                  href="#"
+                  className="text-xs uppercase tracking-ultra text-ink-lighter transition-colors duration-300 hover:text-ink"
+                >
+                  Risk disclosures
+                </a>
+                <a
+                  href="mailto:compliance@talavidus.com"
+                  className="text-xs uppercase tracking-ultra text-ink-lighter transition-colors duration-300 hover:text-ink"
+                >
+                  Contact
+                </a>
+              </div>
             </div>
           </div>
         </div>

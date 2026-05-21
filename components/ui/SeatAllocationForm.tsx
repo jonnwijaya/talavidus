@@ -156,7 +156,7 @@ export default function SeatAllocationForm() {
             htmlFor="entity"
             className="block text-xs uppercase tracking-ultra text-ink-light"
           >
-            Institutional Entity
+            Institutional entity
           </label>
           <input
             id="entity"
@@ -182,7 +182,7 @@ export default function SeatAllocationForm() {
             htmlFor="signatory"
             className="block text-xs uppercase tracking-ultra text-ink-light"
           >
-            Authorised Signatory
+            Authorised signatory
           </label>
           <input
             id="signatory"
@@ -210,7 +210,7 @@ export default function SeatAllocationForm() {
             htmlFor="domain"
             className="block text-xs uppercase tracking-ultra text-ink-light"
           >
-            Corporate Domain
+            Corporate domain
           </label>
           <input
             id="domain"
@@ -236,7 +236,7 @@ export default function SeatAllocationForm() {
             htmlFor="aum"
             className="block text-xs uppercase tracking-ultra text-ink-light"
           >
-            Assets Under Management
+            Assets under management
           </label>
           <select
             id="aum"
@@ -272,7 +272,7 @@ export default function SeatAllocationForm() {
               htmlFor="intent"
               className="block text-xs uppercase tracking-ultra text-ink-light"
             >
-              Allocation Intent
+              Allocation intent
             </label>
             <span className="text-xs text-ink-lighter">
               {formData.intent.length}/500
@@ -288,7 +288,7 @@ export default function SeatAllocationForm() {
             aria-invalid={!!errors.intent}
             aria-describedby={errors.intent ? "intent-error" : undefined}
             className="mt-4 w-full px-0 py-3 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out resize-none"
-            placeholder="Describe your allocation intent..."
+            placeholder="Describe how you intend to use the Engine (mandate, horizon, constraints)..."
           />
           {errors.intent && (
             <p id="intent-error" className="mt-2 text-xs text-ink">
@@ -302,30 +302,22 @@ export default function SeatAllocationForm() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="group relative inline-flex items-center justify-center text-center border font-sans h-14 bg-ink px-14 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo overflow-clip border-ink text-white hover:bg-transparent hover:text-ink disabled:opacity-40 disabled:cursor-not-allowed"
+            className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-14 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            {status === "loading"
-              ? "Processing..."
-              : "Submit for Review"}
+            {status === "loading" ? "Processing..." : "Submit for Review"}
           </button>
         </div>
-
-        {/* Error State */}
-        {status === "error" && (
-          <div className="md:col-span-2">
-            <p className="text-xs text-ink text-center">
-              Submission failed. Retry or contact{" "}
-              <a
-                href="mailto:compliance@talavidus.com"
-                className="underline underline-offset-4 transition-opacity duration-300 ease-out hover:opacity-60"
-              >
-                compliance@talavidus.com
-              </a>
-              .
-            </p>
-          </div>
-        )}
       </div>
+
+      {/* Legal line */}
+      <p className="mt-12 text-xs font-light leading-body text-ink-lighter">
+        Submission constitutes a non‑binding expression of interest.
+        Allocation is capacity‑constrained and subject to internal review,
+        regulatory obligations, and jurisdictional compliance verification.
+        Talavidus Limited reserves sole discretion in seat allocation
+        decisions. No information herein constitutes an offer to contract
+        or a solicitation to transact.
+      </p>
     </form>
   );
 }

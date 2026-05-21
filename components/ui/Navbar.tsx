@@ -3,8 +3,10 @@
 import { useState, useEffect, useRef } from "react";
 
 const NAV_LINKS = [
-  { href: "#prescient-engine", label: "The Engine" },
-  { href: "#seat-allocation", label: "Allocation" },
+  { href: "#engine", label: "Engine" },
+  { href: "#architecture", label: "Architecture" },
+  { href: "#research", label: "Research" },
+  { href: "#allocation", label: "Allocation" },
 ];
 
 export default function Navbar() {
@@ -60,7 +62,7 @@ export default function Navbar() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-transform duration-500 ease-expo ${
           isVisible ? "translate-y-0" : "-translate-y-full"
-        } ${isAtTop ? "" : "bg-background/90 backdrop-blur-sm"}`}
+        } ${isAtTop ? "" : "bg-background/90 backdrop-blur-sm border-b border-border"}`}
       >
         <div className="max-w-container mx-auto px-8 md:px-16 h-20 flex items-center justify-between">
           <a
@@ -74,22 +76,32 @@ export default function Navbar() {
             Talavidus
           </a>
 
-          <ul className="hidden md:flex items-center gap-10">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  className={`text-xs uppercase tracking-ultra transition-opacity duration-300 ease-out hover:opacity-60 focus-visible:opacity-60 ${
-                    isAtTop
-                      ? "text-white mix-blend-difference"
-                      : "text-ink"
-                  }`}
-                >
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden md:flex items-center gap-10">
+            <ul className="flex items-center gap-10">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className={`text-xs uppercase tracking-ultra transition-opacity duration-300 ease-out hover:opacity-60 focus-visible:opacity-60 ${
+                      isAtTop
+                        ? "text-white mix-blend-difference"
+                        : "text-ink"
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+            <a
+              href="#allocation"
+              className={`text-xs uppercase tracking-ultra transition-opacity duration-300 ease-out hover:opacity-60 ${
+                isAtTop ? "text-white mix-blend-difference" : "text-ink"
+              }`}
+            >
+              Request Allocation
+            </a>
+          </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
@@ -131,7 +143,7 @@ export default function Navbar() {
               key={link.href}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="font-serif text-4xl md:text-5xl font-light text-ink tracking-tight transition-opacity duration-300 hover:opacity-50"
+              className="font-serif text-4xl font-light text-ink tracking-tight transition-opacity duration-300 hover:opacity-50"
               style={{
                 transitionDelay: isOpen ? `${i * 75}ms` : "0ms",
                 transform: isOpen ? "translateY(0)" : "translateY(20px)",
@@ -144,6 +156,21 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <a
+            href="#allocation"
+            onClick={() => setIsOpen(false)}
+            className="font-serif text-4xl font-light text-ink tracking-tight transition-opacity duration-300 hover:opacity-50"
+            style={{
+              transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : "0ms",
+              transform: isOpen ? "translateY(0)" : "translateY(20px)",
+              opacity: isOpen ? 1 : 0,
+              transitionProperty: "opacity, transform",
+              transitionDuration: "500ms",
+              transitionTimingFunction: "cubic-bezier(0.19, 1, 0.22, 1)",
+            }}
+          >
+            Request Allocation
+          </a>
         </div>
       </div>
     </>
