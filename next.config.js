@@ -128,13 +128,11 @@ module.exports = {
         has: [{ type: 'host', value: 'www.talavidus.com' }],
         destination: 'https://talavidus.com/:path*',
         permanent: true,
-        statusCode: 308,
       })
       redirects.push({
         source: '/dashboard/:path*',
         destination: 'https://prescient.talavidus.com/:path*',
         permanent: true,
-        statusCode: 308,
       })
     }
 

@@ -70,7 +70,6 @@
         }
       ],
       "destination": "https://talavidus.com/:path*",
-      "permanent": true,
       "statusCode": 308
     }
   ],
