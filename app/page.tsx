@@ -1,45 +1,10 @@
 import SeatAllocationForm from "@/components/ui/SeatAllocationForm";
+import Navbar from "@/components/ui/Navbar";
 
 export default function Home() {
   return (
     <>
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
-        <div className="max-w-container mx-auto px-8 md:px-16 h-20 flex items-center justify-between">
-          <a
-            href="#"
-            className="font-serif text-lg tracking-wide text-white select-none"
-          >
-            Talavidus
-          </a>
-          <ul className="flex items-center gap-10">
-            <li>
-              <a
-                href="#prescient-engine"
-                className="text-xs uppercase tracking-ultra text-white transition-opacity duration-300 ease-out hover:opacity-60 focus-visible:opacity-60"
-              >
-                Engine
-              </a>
-            </li>
-            <li>
-              <a
-                href="#seat-allocation"
-                className="text-xs uppercase tracking-ultra text-white transition-opacity duration-300 ease-out hover:opacity-60 focus-visible:opacity-60"
-              >
-                Allocation
-              </a>
-            </li>
-            <li>
-              <a
-                href="#jurisdiction"
-                className="text-xs uppercase tracking-ultra text-white transition-opacity duration-300 ease-out hover:opacity-60 focus-visible:opacity-60"
-              >
-                Jurisdiction
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="min-h-screen flex items-center justify-center px-8 md:px-16">
