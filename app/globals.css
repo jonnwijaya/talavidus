@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-obsidian: #0A0A0A;
+  --color-obsidian-deep: #050505;
+  --color-surface: #0F0F0F;
+  --color-surface-elevated: #141414;
+  --color-ink: #1A1A1A;
+  --color-ink-light: #2A2A2A;
+  --color-platinum: #B8B8B8;
+  --color-platinum-light: #D4D4D4;
+  --color-slate-muted: #6B6B6B;
+  --color-slate: #888888;
+  --color-snow: #FAFAFA;
+  --color-ash: #CCCCCC;
+  --color-mist: #EAEAEA;
+  --color-carbon: #333333;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-obsidian-deep);
+  color: var(--color-snow);
+  font-family: "Inter", system-ui, sans-serif;
+  font-weight: 300;
+}
+
+::selection {
+  background: var(--color-carbon);
+  color: var(--color-snow);
+}
+
+input,
+textarea,
+select {
+  border-radius: 0;
+  outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--color-snow);
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--color-snow);
+  -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+button {
+  border-radius: 0;
+  outline: none;
+}
+
+button:focus-visible {
+  outline: 1px solid var(--color-snow);
+  outline-offset: 2px;
+}
+
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--color-snow);
+}
+
+::-moz-selection {
+  background: var(--color-carbon);
+  color: var(--color-snow);
+}
