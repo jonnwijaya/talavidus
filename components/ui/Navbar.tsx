@@ -3,10 +3,12 @@
 import { useState, useEffect, useRef } from "react";
 
 const NAV_LINKS = [
-  { href: "#engine", label: "Engine" },
-  { href: "#architecture", label: "Architecture" },
+  { href: "#talavidus", label: "Talavidus" },
+  { href: "#prescient", label: "Prescient" },
+  { href: "#access", label: "Access" },
   { href: "#research", label: "Research" },
-  { href: "#allocation", label: "Allocation" },
+  { href: "#architecture", label: "Architecture" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default function Navbar() {
@@ -67,26 +69,18 @@ export default function Navbar() {
         <div className="max-w-container mx-auto px-8 md:px-16 h-20 flex items-center justify-between">
           <a
             href="#"
-            className={`font-serif text-lg tracking-wide select-none transition-colors duration-300 ${
-              isAtTop && !isOpen
-                ? "text-white mix-blend-difference"
-                : "text-ink"
-            }`}
+            className="font-serif text-lg tracking-wide select-none text-ink transition-colors duration-300"
           >
             Talavidus
           </a>
 
-          <div className="hidden md:flex items-center gap-10">
+          <div className="hidden lg:flex items-center gap-10">
             <ul className="flex items-center gap-10">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className={`text-xs uppercase tracking-ultra transition-opacity duration-300 ease-out hover:opacity-60 focus-visible:opacity-60 ${
-                      isAtTop
-                        ? "text-white mix-blend-difference"
-                        : "text-ink"
-                    }`}
+                    className="text-xs uppercase tracking-ultra text-ink-light transition-colors duration-300 ease-out hover:text-ink focus-visible:text-ink"
                   >
                     {link.label}
                   </a>
@@ -94,19 +88,17 @@ export default function Navbar() {
               ))}
             </ul>
             <a
-              href="#allocation"
-              className={`text-xs uppercase tracking-ultra transition-opacity duration-300 ease-out hover:opacity-60 ${
-                isAtTop ? "text-white mix-blend-difference" : "text-ink"
-              }`}
+              href="#contact"
+              className="inline-flex items-center justify-center text-center font-sans h-10 px-6 text-[11px] uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink bg-ink text-white hover:bg-transparent hover:text-ink"
             >
-              Request Allocation
+              Request Access
             </a>
           </div>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`md:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 transition-colors duration-300 ${
-              isOpen ? "text-ink" : isAtTop ? "text-white mix-blend-difference" : "text-ink"
+            className={`lg:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 transition-colors duration-300 ${
+              isOpen ? "text-ink" : "text-ink"
             }`}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
@@ -131,7 +123,7 @@ export default function Navbar() {
       </nav>
 
       <div
-        className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-expo md:hidden ${
+        className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-expo lg:hidden ${
           isOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -157,9 +149,9 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="#allocation"
+            href="#contact"
             onClick={() => setIsOpen(false)}
-            className="font-serif text-4xl font-light text-ink tracking-tight transition-opacity duration-300 hover:opacity-50"
+            className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink"
             style={{
               transitionDelay: isOpen ? `${NAV_LINKS.length * 75}ms` : "0ms",
               transform: isOpen ? "translateY(0)" : "translateY(20px)",
@@ -169,7 +161,7 @@ export default function Navbar() {
               transitionTimingFunction: "cubic-bezier(0.19, 1, 0.22, 1)",
             }}
           >
-            Request Allocation
+            Request Access
           </a>
         </div>
       </div>

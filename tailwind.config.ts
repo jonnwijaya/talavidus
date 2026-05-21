@@ -15,7 +15,7 @@ const config: Config = {
         },
         surface: {
           DEFAULT: "#ffffff",
-          elevated: "#f9f5ef",
+          elevated: "#f4f0ea",
         },
         ink: {
           DEFAULT: "#0e0e0e",
@@ -28,6 +28,12 @@ const config: Config = {
           dark: "#c7c4bf",
         },
         snow: "#ffffff",
+        mineral: {
+          DEFAULT: "#2a4b41",
+          light: "#3d6358",
+          dark: "#1f3a32",
+          muted: "#e8eeec",
+        },
       },
       fontFamily: {
         serif: ["Cormorant Garamond", "Georgia", "serif"],
