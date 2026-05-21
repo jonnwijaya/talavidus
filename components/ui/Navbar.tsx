@@ -3,9 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 
 const NAV_LINKS = [
-  { href: "#prescient-engine", label: "Engine" },
+  { href: "#prescient-engine", label: "The Engine" },
   { href: "#seat-allocation", label: "Allocation" },
-  { href: "#jurisdiction", label: "Jurisdiction" },
 ];
 
 export default function Navbar() {
@@ -24,11 +23,9 @@ export default function Navbar() {
       setIsAtTop(currentScrollY < 10);
 
       if (delta > 10 && currentScrollY > 80) {
-        // Scrolling down, past hero
         setIsVisible(false);
         setIsOpen(false);
       } else if (delta < -5) {
-        // Scrolling up
         setIsVisible(true);
       }
 
@@ -47,7 +44,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -67,7 +63,6 @@ export default function Navbar() {
         } ${isAtTop ? "" : "bg-background/90 backdrop-blur-sm"}`}
       >
         <div className="max-w-container mx-auto px-8 md:px-16 h-20 flex items-center justify-between">
-          {/* Logo */}
           <a
             href="#"
             className={`font-serif text-lg tracking-wide select-none transition-colors duration-300 ${
@@ -79,7 +74,6 @@ export default function Navbar() {
             Talavidus
           </a>
 
-          {/* Desktop Links */}
           <ul className="hidden md:flex items-center gap-10">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -97,7 +91,6 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* Mobile Hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className={`md:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 transition-colors duration-300 ${
@@ -125,7 +118,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Menu Overlay */}
       <div
         className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-expo md:hidden ${
           isOpen

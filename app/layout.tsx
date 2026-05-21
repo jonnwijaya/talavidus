@@ -4,18 +4,20 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Talavidus — Sovereign Risk Intelligence",
   description:
-    "Foreknowledge of the sovereign. Macro orchestration for capital that moves civilisations. Talavidus is a proprietary analytical system for sovereign risk calibration.",
+    "Talavidus is a macro technology and research firm focused on sovereign risk intelligence and institutional capital allocation. The Prescient Engine provides regime‑aware signals, risk corridors, and deployment frameworks for allocators and reserve managers.",
   keywords: [
     "sovereign risk",
     "macro intelligence",
     "institutional capital",
     "risk calibration",
+    "regime detection",
     "talavidus",
+    "prescient engine",
   ],
   openGraph: {
     title: "Talavidus — Sovereign Risk Intelligence",
     description:
-      "Foreknowledge of the sovereign. Macro orchestration for capital that moves civilisations.",
+      "Macro technology and research for institutional allocators and reserve managers.",
     type: "website",
     locale: "en_US",
   },
@@ -23,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Talavidus — Sovereign Risk Intelligence",
     description:
-      "Foreknowledge of the sovereign. Macro orchestration for capital that moves civilisations.",
+      "Macro technology and research for institutional allocators and reserve managers.",
   },
   robots: {
     index: true,

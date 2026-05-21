@@ -56,9 +56,7 @@ export default function SeatAllocationForm() {
       >
     ) => {
       const { name, value } = e.target;
-
       if (name === "intent" && value.length > 500) return;
-
       setFormData((prev) => ({ ...prev, [name]: value }));
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     },
@@ -106,7 +104,6 @@ export default function SeatAllocationForm() {
   const handleSubmit = useCallback(
     async (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-
       if (!validateForm()) return;
 
       setStatus("loading");
@@ -123,9 +120,7 @@ export default function SeatAllocationForm() {
 
         const response = await fetch("/api/seat-request", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
 
@@ -169,7 +164,6 @@ export default function SeatAllocationForm() {
             type="text"
             value={formData.entity}
             onChange={handleChange}
-            aria-label="Institutional Entity"
             aria-invalid={!!errors.entity}
             aria-describedby={errors.entity ? "entity-error" : undefined}
             className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out"
@@ -196,7 +190,6 @@ export default function SeatAllocationForm() {
             type="text"
             value={formData.signatory}
             onChange={handleChange}
-            aria-label="Authorised Signatory"
             aria-invalid={!!errors.signatory}
             aria-describedby={
               errors.signatory ? "signatory-error" : undefined
@@ -225,7 +218,6 @@ export default function SeatAllocationForm() {
             type="email"
             value={formData.domain}
             onChange={handleChange}
-            aria-label="Corporate Domain"
             aria-invalid={!!errors.domain}
             aria-describedby={errors.domain ? "domain-error" : undefined}
             className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out"
@@ -251,7 +243,6 @@ export default function SeatAllocationForm() {
             name="aum"
             value={formData.aum}
             onChange={handleChange}
-            aria-label="Assets Under Management"
             aria-invalid={!!errors.aum}
             aria-describedby={errors.aum ? "aum-error" : undefined}
             className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink focus:border-ink transition-colors duration-300 ease-out appearance-none cursor-pointer"
@@ -294,7 +285,6 @@ export default function SeatAllocationForm() {
             maxLength={500}
             value={formData.intent}
             onChange={handleChange}
-            aria-label="Allocation Intent"
             aria-invalid={!!errors.intent}
             aria-describedby={errors.intent ? "intent-error" : undefined}
             className="mt-4 w-full px-0 py-3 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out resize-none"
@@ -312,9 +302,11 @@ export default function SeatAllocationForm() {
           <button
             type="submit"
             disabled={status === "loading"}
-            className="group relative inline-flex items-center justify-center text-center border font-sans h-14 bg-transparent px-14 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo overflow-clip border-ink text-ink hover:bg-ink hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
+            className="group relative inline-flex items-center justify-center text-center border font-sans h-14 bg-ink px-14 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo overflow-clip border-ink text-white hover:bg-transparent hover:text-ink disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            {status === "loading" ? "Calibrating instruments." : "Submit for Review"}
+            {status === "loading"
+              ? "Processing..."
+              : "Submit for Review"}
           </button>
         </div>
 
@@ -334,15 +326,6 @@ export default function SeatAllocationForm() {
           </div>
         )}
       </div>
-
-      {/* Footer Disclaimer */}
-      <p className="mt-16 text-xs font-light leading-body text-ink-lighter">
-        Submission constitutes a non-binding expression of interest. All
-        applications are subject to internal review and jurisdictional
-        compliance verification. Talavidus Limited reserves sole discretion in
-        seat allocation decisions. No information herein constitutes an offer to
-        contract.
-      </p>
     </form>
   );
 }
