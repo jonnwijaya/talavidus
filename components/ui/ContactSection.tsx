@@ -1,7 +1,5 @@
 "use client";
 
-import SeatAllocationForm from "./SeatAllocationForm";
-
 export default function ContactSection() {
   return (
     <section id="contact" className="py-32 md:py-48 px-8 md:px-16 bg-surface">
@@ -61,7 +59,7 @@ export default function ContactSection() {
         <div className="w-full h-px bg-border-dark mb-24" />
 
         {/* Dual access paths */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
           {/* Individual path */}
           <div>
             <p className="text-xs uppercase tracking-ultra text-ink-light mb-6">
@@ -71,19 +69,20 @@ export default function ContactSection() {
               Start with free core access
             </h3>
             <p className="mt-6 text-sm font-light leading-body text-ink-light max-w-prose">
-              Explore the Prescient dashboard, general data streams, and regime
-              summaries at no cost. Upgrade to Professional when you need deeper
-              analytical depth, signal histories, and explicit ML verdicts.
+              Explore the Prescient dashboard, general macro data streams, and
+              regime summaries at no cost. Upgrade to Professional when you need
+              deeper analytical depth, signal histories, and explicit ML
+              verdicts.
             </p>
             <div className="mt-10 flex flex-col sm:flex-row items-start gap-4">
               <a
-                href="https://prescient.talavidus.com"
+                href="/signup/free"
                 className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink"
               >
                 Start Free
               </a>
               <a
-                href="https://prescient.talavidus.com/subscribe"
+                href="/signup/professional"
                 className="inline-flex items-center justify-center text-center font-sans h-14 bg-transparent px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-border-dark text-ink hover:border-ink"
               >
                 Start Professional Trial
@@ -97,27 +96,29 @@ export default function ContactSection() {
               Institutions
             </p>
             <h3 className="font-serif text-2xl md:text-3xl font-light leading-heading tracking-tight text-ink">
-              Request seat allocation
+              Discuss deployment
             </h3>
             <p className="mt-6 text-sm font-light leading-body text-ink-light max-w-prose">
-              Institutional access is allocated by seat, not by subscription.
-              Each seat is provisioned for a specific entity and tied to its
-              mandate and governance structure. API access, custom inference
-              pipelines, and dedicated onboarding are available at the
-              Institutional tier.
+              Institutional access is a bespoke commercial arrangement priced
+              according to integration scope, access level, throughput,
+              workflow requirements, onboarding, and support. Each engagement is
+              provisioned for a specific entity and tied to its mandate and
+              governance structure.
             </p>
             <p className="mt-6 text-sm font-light leading-body text-ink-lighter max-w-prose">
-              Submissions are non-binding expressions of interest. Allocation is
-              capacity-constrained and subject to internal review, regulatory
-              obligations, and compliance verification in each relevant
-              jurisdiction.
+              Capabilities include API access, webhooks, higher-throughput
+              delivery, custom inference pipelines, tailored workflows, and
+              dedicated onboarding and support.
             </p>
+            <div className="mt-10">
+              <a
+                href="/request-allocation"
+                className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink"
+              >
+                Request institutional access
+              </a>
+            </div>
           </div>
-        </div>
-
-        {/* Institutional form */}
-        <div className="max-w-3xl mx-auto">
-          <SeatAllocationForm />
         </div>
       </div>
     </section>

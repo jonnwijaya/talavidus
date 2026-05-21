@@ -6,7 +6,7 @@ const FOOTER_LINKS = [
     links: [
       { label: "Prescient Engine", href: "#prescient" },
       { label: "Access Model", href: "#access" },
-      { label: "Start Free", href: "https://prescient.talavidus.com" },
+      { label: "Start Free", href: "/signup/free" },
     ],
   },
   {

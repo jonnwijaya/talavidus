@@ -3,25 +3,25 @@
 const TIERS = [
   {
     name: "Free",
-    tagline: "Core intelligence for individual practitioners",
+    tagline: "Core dashboard access and general macro data streams",
     price: null,
     cta: "Start Free",
-    ctaHref: "https://prescient.talavidus.com",
+    ctaHref: "/signup/free",
     features: [
       "Core Prescient dashboard",
-      "General data streams and regime summaries",
-      "Basic sovereign risk telemetry",
+      "General macro data streams",
+      "Regime summaries and basic telemetry",
       "Community support",
     ],
-    note: "No credit card required. Free access is unlimited in duration with calibrated rate limits.",
+    note: "No credit card required. Unlimited duration with calibrated rate limits.",
     variant: "light" as const,
   },
   {
     name: "Professional",
-    tagline: "Deeper analytical depth for serious practitioners",
+    tagline: "For advanced solo traders and finance professionals",
     price: "$99–199 / month",
     cta: "Start 1-Month Trial",
-    ctaHref: "https://prescient.talavidus.com/subscribe",
+    ctaHref: "/signup/professional",
     features: [
       "Everything in Free",
       "Market narrative analysis",
@@ -35,20 +35,20 @@ const TIERS = [
   },
   {
     name: "Institutional",
-    tagline: "Governed system access for allocators and entities",
-    price: "~$749 / month",
-    cta: "Request Allocation",
-    ctaHref: "#contact",
+    tagline: "Bespoke commercial arrangement for allocators and entities",
+    price: "Custom pricing",
+    cta: "Request institutional access",
+    ctaHref: "/request-allocation",
     features: [
       "Everything in Professional",
-      "REST API endpoints and webhooks",
-      "Custom ML inference pipelines",
-      "Dedicated onboarding and integration support",
-      "Higher-trust access pathways and audit trails",
-      "Telegram digest integration (premium routing)",
+      "API access and webhooks",
+      "Higher-throughput delivery",
+      "Custom inference pipelines",
+      "Tailored workflows",
+      "Dedicated onboarding and support",
       "Service-level agreements",
     ],
-    note: "Allocated by seat, tied to mandate and governance structure. Subject to compliance review.",
+    note: "Pricing is based on integration scope, access level, throughput, workflow requirements, onboarding, and support. Allocated by seat and tied to mandate governance.",
     variant: "institutional" as const,
   },
 ];
@@ -145,9 +145,9 @@ export default function AccessModelSection() {
           <div className="lg:col-span-7">
             <p className="text-base font-light leading-body text-ink-light max-w-prose">
               Prescient operates on a freemium data utility model. The core
-              dashboard and general data streams are free and unlimited — because
-              broad access to sovereign-risk telemetry serves the market. Deeper
-              analytical layers, signal histories, and institutional
+              dashboard and general macro data streams are free and unlimited —
+              because broad access to sovereign-risk telemetry serves the market.
+              Deeper analytical layers, signal histories, and institutional
               infrastructure are governed by structured access tiers that reflect
               the value of the underlying system and the compliance requirements
               of institutional deployment.
@@ -163,10 +163,11 @@ export default function AccessModelSection() {
 
         <div className="mt-16 pt-10 border-t border-border">
           <p className="text-sm font-light leading-body text-ink-lighter max-w-prose">
-            Pricing is indicative and may vary by jurisdiction, seat volume, and
-            integration complexity. Institutional allocations are
-            capacity-constrained and subject to internal review. Nothing herein
-            constitutes an offer or solicitation to transact.
+            Professional pricing is indicative and may vary by jurisdiction.
+            Institutional arrangements are bespoke and priced according to
+            integration scope, access level, throughput, and support
+            requirements. Nothing herein constitutes an offer or solicitation to
+            transact.
           </p>
         </div>
       </div>

@@ -15,7 +15,7 @@ const SYSTEM_CAPABILITIES = [
   },
   {
     title: "Worker-Based Digest Delivery",
-    body: "Celery workers manage asynchronous digest generation and delivery. Free digests provide regime summaries. Premium digests include narrative analysis, signal histories, and explicit ML verdicts routed via Telegram or webhook.",
+    body: "Celery workers manage asynchronous digest generation and delivery. Free digests provide regime summaries. Premium digests include narrative analysis, signal histories, and explicit ML verdicts routed via webhook or secure push.",
   },
   {
     title: "Subscription Middleware",
