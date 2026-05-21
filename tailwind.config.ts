@@ -9,55 +9,54 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        obsidian: {
-          DEFAULT: "#0A0A0A",
-          deep: "#050505",
+        background: {
+          DEFAULT: "#f9f5ef",
+          dark: "#ede9e3",
         },
         surface: {
-          DEFAULT: "#0F0F0F",
-          elevated: "#141414",
+          DEFAULT: "#ffffff",
+          elevated: "#f9f5ef",
         },
         ink: {
-          DEFAULT: "#1A1A1A",
-          light: "#2A2A2A",
+          DEFAULT: "#0e0e0e",
+          muted: "#3e3d3c",
+          light: "#7d7b78",
+          lighter: "#95938f",
         },
-        platinum: {
-          DEFAULT: "#B8B8B8",
-          light: "#D4D4D4",
+        border: {
+          DEFAULT: "#e0dcd7",
+          dark: "#c7c4bf",
         },
-        slate: {
-          muted: "#6B6B6B",
-          DEFAULT: "#888888",
-        },
-        void: "#000000",
-        snow: "#FAFAFA",
-        ash: "#CCCCCC",
-        mist: "#EAEAEA",
-        carbon: "#333333",
+        snow: "#ffffff",
       },
       fontFamily: {
         serif: ["Cormorant Garamond", "Georgia", "serif"],
         sans: ["Inter", "system-ui", "sans-serif"],
       },
       letterSpacing: {
-        ultra: "0.2em",
+        ultra: "0.25em",
         wide: "0.15em",
         section: "0.1em",
         body: "0.05em",
         tight: "-0.02em",
       },
       lineHeight: {
-        hero: "1.1",
+        hero: "1.05",
         body: "1.7",
+        heading: "1.2",
       },
       maxWidth: {
         container: "72rem",
+        prose: "40rem",
       },
       transitionDuration: {
         DEFAULT: "300ms",
+        slow: "500ms",
+        slower: "1000ms",
       },
       transitionTimingFunction: {
         DEFAULT: "ease-out",
+        expo: "cubic-bezier(0.19, 1, 0.22, 1)",
       },
     },
   },

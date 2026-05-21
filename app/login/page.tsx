@@ -43,10 +43,10 @@ export default async function LoginPage({
 
   if (error || !url) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-obsidian-deep">
+      <main className="min-h-screen flex items-center justify-center bg-background">
         <div className="text-center px-8">
-          <h1 className="text-2xl font-serif font-light text-snow mb-4">Authentication Error</h1>
-          <p className="text-slate">
+          <h1 className="text-2xl font-serif font-light text-ink mb-4">Authentication Error</h1>
+          <p className="text-ink-light">
             {error?.message || 'Failed to initialize authentication flow.'}
           </p>
         </div>

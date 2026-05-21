@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Talavidus — Sovereign Risk Intelligence",
   description:
-    "Foreknowledge of the sovereign. Macro orchestration for capital that moves civilisations. Talavidus is a proprietary chronometric system for sovereign risk calibration.",
+    "Foreknowledge of the sovereign. Macro orchestration for capital that moves civilisations. Talavidus is a proprietary analytical system for sovereign risk calibration.",
   keywords: [
     "sovereign risk",
     "macro intelligence",
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -47,11 +47,11 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="bg-obsidian-deep text-snow font-sans antialiased">
+      <body className="bg-background text-ink font-sans antialiased">
         {children}
       </body>
     </html>

@@ -38,9 +38,9 @@ const INITIAL_FORM_DATA: FormData = {
 const AUM_OPTIONS = [
   { value: "", label: "Select AUM range" },
   { value: "below-500m", label: "Below $500M" },
-  { value: "500m-2b", label: "$500M \u2014 $2B" },
-  { value: "2b-10b", label: "$2B \u2014 $10B" },
-  { value: "10b-50b", label: "$10B \u2014 $50B" },
+  { value: "500m-2b", label: "$500M — $2B" },
+  { value: "2b-10b", label: "$2B — $10B" },
+  { value: "10b-50b", label: "$10B — $50B" },
   { value: "above-50b", label: "Above $50B" },
 ];
 
@@ -145,7 +145,7 @@ export default function SeatAllocationForm() {
   if (status === "success") {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
-        <p className="text-sm font-light tracking-body text-snow text-center">
+        <p className="text-sm font-light tracking-body text-ink-light text-center">
           Received. Review in progress.
         </p>
       </div>
@@ -154,12 +154,12 @@ export default function SeatAllocationForm() {
 
   return (
     <form onSubmit={handleSubmit} noValidate>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-10">
         {/* Institutional Entity */}
         <div className="md:col-span-1">
           <label
             htmlFor="entity"
-            className="block text-xs uppercase tracking-wide text-slate-muted"
+            className="block text-xs uppercase tracking-ultra text-ink-light"
           >
             Institutional Entity
           </label>
@@ -172,11 +172,11 @@ export default function SeatAllocationForm() {
             aria-label="Institutional Entity"
             aria-invalid={!!errors.entity}
             aria-describedby={errors.entity ? "entity-error" : undefined}
-            className="mt-3 w-full h-12 px-4 bg-surface border border-ink-light text-sm text-snow placeholder-slate-muted focus:border-snow transition-colors duration-300 ease-out"
+            className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out"
             placeholder="Registered legal name"
           />
           {errors.entity && (
-            <p id="entity-error" className="mt-2 text-xs text-snow">
+            <p id="entity-error" className="mt-2 text-xs text-ink">
               {errors.entity}
             </p>
           )}
@@ -186,7 +186,7 @@ export default function SeatAllocationForm() {
         <div className="md:col-span-1">
           <label
             htmlFor="signatory"
-            className="block text-xs uppercase tracking-wide text-slate-muted"
+            className="block text-xs uppercase tracking-ultra text-ink-light"
           >
             Authorised Signatory
           </label>
@@ -201,11 +201,11 @@ export default function SeatAllocationForm() {
             aria-describedby={
               errors.signatory ? "signatory-error" : undefined
             }
-            className="mt-3 w-full h-12 px-4 bg-surface border border-ink-light text-sm text-snow placeholder-slate-muted focus:border-snow transition-colors duration-300 ease-out"
+            className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out"
             placeholder="Title and full name"
           />
           {errors.signatory && (
-            <p id="signatory-error" className="mt-2 text-xs text-snow">
+            <p id="signatory-error" className="mt-2 text-xs text-ink">
               {errors.signatory}
             </p>
           )}
@@ -215,7 +215,7 @@ export default function SeatAllocationForm() {
         <div className="md:col-span-1">
           <label
             htmlFor="domain"
-            className="block text-xs uppercase tracking-wide text-slate-muted"
+            className="block text-xs uppercase tracking-ultra text-ink-light"
           >
             Corporate Domain
           </label>
@@ -228,11 +228,11 @@ export default function SeatAllocationForm() {
             aria-label="Corporate Domain"
             aria-invalid={!!errors.domain}
             aria-describedby={errors.domain ? "domain-error" : undefined}
-            className="mt-3 w-full h-12 px-4 bg-surface border border-ink-light text-sm text-snow placeholder-slate-muted focus:border-snow transition-colors duration-300 ease-out"
+            className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out"
             placeholder="name@institution.com"
           />
           {errors.domain && (
-            <p id="domain-error" className="mt-2 text-xs text-snow">
+            <p id="domain-error" className="mt-2 text-xs text-ink">
               {errors.domain}
             </p>
           )}
@@ -242,7 +242,7 @@ export default function SeatAllocationForm() {
         <div className="md:col-span-1">
           <label
             htmlFor="aum"
-            className="block text-xs uppercase tracking-wide text-slate-muted"
+            className="block text-xs uppercase tracking-ultra text-ink-light"
           >
             Assets Under Management
           </label>
@@ -254,11 +254,11 @@ export default function SeatAllocationForm() {
             aria-label="Assets Under Management"
             aria-invalid={!!errors.aum}
             aria-describedby={errors.aum ? "aum-error" : undefined}
-            className="mt-3 w-full h-12 px-4 bg-surface border border-ink-light text-sm text-snow focus:border-snow transition-colors duration-300 ease-out appearance-none cursor-pointer"
+            className="mt-4 w-full h-12 px-0 bg-transparent border-0 border-b border-border text-sm text-ink focus:border-ink transition-colors duration-300 ease-out appearance-none cursor-pointer"
             style={{
-              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B6B6B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
+              backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%237d7b78' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
               backgroundRepeat: "no-repeat",
-              backgroundPosition: "right 16px center",
+              backgroundPosition: "right 0 center",
             }}
           >
             {AUM_OPTIONS.map((option) => (
@@ -268,7 +268,7 @@ export default function SeatAllocationForm() {
             ))}
           </select>
           {errors.aum && (
-            <p id="aum-error" className="mt-2 text-xs text-snow">
+            <p id="aum-error" className="mt-2 text-xs text-ink">
               {errors.aum}
             </p>
           )}
@@ -279,11 +279,11 @@ export default function SeatAllocationForm() {
           <div className="flex items-center justify-between">
             <label
               htmlFor="intent"
-              className="block text-xs uppercase tracking-wide text-slate-muted"
+              className="block text-xs uppercase tracking-ultra text-ink-light"
             >
               Allocation Intent
             </label>
-            <span className="text-xs text-slate-muted">
+            <span className="text-xs text-ink-lighter">
               {formData.intent.length}/500
             </span>
           </div>
@@ -297,37 +297,35 @@ export default function SeatAllocationForm() {
             aria-label="Allocation Intent"
             aria-invalid={!!errors.intent}
             aria-describedby={errors.intent ? "intent-error" : undefined}
-            className="mt-3 w-full px-4 py-3 bg-surface border border-ink-light text-sm text-snow placeholder-slate-muted focus:border-snow transition-colors duration-300 ease-out resize-none"
+            className="mt-4 w-full px-0 py-3 bg-transparent border-0 border-b border-border text-sm text-ink placeholder-ink-lighter focus:border-ink transition-colors duration-300 ease-out resize-none"
             placeholder="Describe your allocation intent..."
           />
           {errors.intent && (
-            <p id="intent-error" className="mt-2 text-xs text-snow">
+            <p id="intent-error" className="mt-2 text-xs text-ink">
               {errors.intent}
             </p>
           )}
         </div>
 
         {/* Submit */}
-        <div className="md:col-span-2">
+        <div className="md:col-span-2 mt-6">
           <button
             type="submit"
             disabled={status === "loading"}
-            className="w-full h-12 bg-snow text-obsidian-deep text-xs uppercase tracking-ultra transition-all duration-300 ease-out hover:bg-mist active:bg-ash disabled:opacity-60 disabled:cursor-not-allowed"
+            className="group relative inline-flex items-center justify-center text-center border font-sans h-14 bg-transparent px-14 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo overflow-clip border-ink text-ink hover:bg-ink hover:text-white disabled:opacity-40 disabled:cursor-not-allowed"
           >
-            {status === "loading"
-              ? "Calibrating instruments."
-              : "Submit for Review"}
+            {status === "loading" ? "Calibrating instruments." : "Submit for Review"}
           </button>
         </div>
 
         {/* Error State */}
         {status === "error" && (
           <div className="md:col-span-2">
-            <p className="text-xs text-snow text-center">
+            <p className="text-xs text-ink text-center">
               Submission failed. Retry or contact{" "}
               <a
                 href="mailto:compliance@talavidus.com"
-                className="transition-opacity duration-300 ease-out hover:opacity-60"
+                className="underline underline-offset-4 transition-opacity duration-300 ease-out hover:opacity-60"
               >
                 compliance@talavidus.com
               </a>
@@ -338,7 +336,7 @@ export default function SeatAllocationForm() {
       </div>
 
       {/* Footer Disclaimer */}
-      <p className="mt-8 text-xs font-light leading-body text-slate-muted text-center">
+      <p className="mt-16 text-xs font-light leading-body text-ink-lighter">
         Submission constitutes a non-binding expression of interest. All
         applications are subject to internal review and jurisdictional
         compliance verification. Talavidus Limited reserves sole discretion in

@@ -3,20 +3,17 @@
 @tailwind utilities;
 
 :root {
-  --color-obsidian: #0A0A0A;
-  --color-obsidian-deep: #050505;
-  --color-surface: #0F0F0F;
-  --color-surface-elevated: #141414;
-  --color-ink: #1A1A1A;
-  --color-ink-light: #2A2A2A;
-  --color-platinum: #B8B8B8;
-  --color-platinum-light: #D4D4D4;
-  --color-slate-muted: #6B6B6B;
-  --color-slate: #888888;
-  --color-snow: #FAFAFA;
-  --color-ash: #CCCCCC;
-  --color-mist: #EAEAEA;
-  --color-carbon: #333333;
+  --color-background: #f9f5ef;
+  --color-background-dark: #ede9e3;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #f9f5ef;
+  --color-ink: #0e0e0e;
+  --color-ink-muted: #3e3d3c;
+  --color-ink-light: #7d7b78;
+  --color-ink-lighter: #95938f;
+  --color-border: #e0dcd7;
+  --color-border-dark: #c7c4bf;
+  --color-snow: #ffffff;
 }
 
 html {
@@ -26,14 +23,14 @@ html {
 }
 
 body {
-  background-color: var(--color-obsidian-deep);
-  color: var(--color-snow);
+  background-color: var(--color-background);
+  color: var(--color-ink);
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 300;
 }
 
 ::selection {
-  background: var(--color-carbon);
+  background: var(--color-ink);
   color: var(--color-snow);
 }
 
@@ -42,12 +39,13 @@ textarea,
 select {
   border-radius: 0;
   outline: none;
+  background-color: transparent;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-  border-color: var(--color-snow);
+  border-color: var(--color-ink);
 }
 
 input:-webkit-autofill,
@@ -59,7 +57,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: var(--color-snow);
+  -webkit-text-fill-color: var(--color-ink);
   -webkit-box-shadow: 0 0 0 1000px var(--color-surface) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -67,10 +65,11 @@ select:-webkit-autofill:focus {
 button {
   border-radius: 0;
   outline: none;
+  background-color: transparent;
 }
 
 button:focus-visible {
-  outline: 1px solid var(--color-snow);
+  outline: 1px solid var(--color-ink);
   outline-offset: 2px;
 }
 
@@ -78,10 +77,10 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
   outline: none;
-  border-color: var(--color-snow);
+  border-color: var(--color-ink);
 }
 
 ::-moz-selection {
-  background: var(--color-carbon);
+  background: var(--color-ink);
   color: var(--color-snow);
 }
