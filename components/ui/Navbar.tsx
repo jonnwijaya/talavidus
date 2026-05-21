@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useRef } from "react";
 
 const NAV_LINKS = [
   { href: "#prescient-engine", label: "Engine" },
@@ -12,30 +12,40 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
   const [isAtTop, setIsAtTop] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
 
-  const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
-    const threshold = 10;
-
-    setIsAtTop(currentScrollY < 10);
-
-    if (currentScrollY < lastScrollY) {
-      // Scrolling up
-      setIsVisible(true);
-    } else if (currentScrollY > lastScrollY + threshold) {
-      // Scrolling down
-      setIsVisible(false);
-      setIsOpen(false);
-    }
-
-    setLastScrollY(currentScrollY);
-  }, [lastScrollY]);
+  const lastScrollY = useRef(0);
+  const ticking = useRef(false);
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+    const updateNavbar = () => {
+      const currentScrollY = window.scrollY;
+      const delta = currentScrollY - lastScrollY.current;
+
+      setIsAtTop(currentScrollY < 10);
+
+      if (delta > 10 && currentScrollY > 80) {
+        // Scrolling down, past hero
+        setIsVisible(false);
+        setIsOpen(false);
+      } else if (delta < -5) {
+        // Scrolling up
+        setIsVisible(true);
+      }
+
+      lastScrollY.current = currentScrollY;
+      ticking.current = false;
+    };
+
+    const onScroll = () => {
+      if (!ticking.current) {
+        window.requestAnimationFrame(updateNavbar);
+        ticking.current = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   // Lock body scroll when mobile menu is open
   useEffect(() => {
