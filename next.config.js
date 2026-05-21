@@ -124,12 +124,6 @@ module.exports = {
 
     if (!IS_LOCAL_DEV) {
       redirects.push({
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.talavidus.com' }],
-        destination: 'https://talavidus.com/:path*',
-        permanent: true,
-      })
-      redirects.push({
         source: '/dashboard/:path*',
         destination: 'https://prescient.talavidus.com/:path*',
         permanent: true,
