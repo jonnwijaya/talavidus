@@ -44,7 +44,7 @@ export default function ProfessionalSignupPage() {
               </p>
 
               <p className="mt-6 text-sm font-medium tracking-section uppercase text-mineral">
-                $99–199 / month
+                $199 / month
               </p>
 
               <ul className="mt-10 space-y-4">

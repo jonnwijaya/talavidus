@@ -19,7 +19,7 @@ const TIERS = [
   {
     name: "Professional",
     tagline: "For advanced solo traders and finance professionals",
-    price: "$99–199 / month",
+    price: "$199 / month",
     cta: "Start 1-Month Trial",
     ctaHref: "/signup/professional",
     features: [
@@ -59,7 +59,7 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
 
   return (
     <div
-      className={`flex flex-col h-full border ${
+      className={`flex flex-col border ${
         isPremium
           ? "border-mineral bg-mineral-muted"
           : isInstitutional
@@ -67,7 +67,7 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
             : "border-border bg-surface"
       }`}
     >
-      <div className="flex flex-col flex-grow h-full p-8 md:p-10">
+      <div className="flex flex-col flex-grow p-8 md:p-10">
         {/* Header */}
         <div>
           <div className="flex items-baseline justify-between gap-4">
@@ -162,7 +162,7 @@ export default function AccessModelSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {TIERS.map((tier) => (
             <TierCard key={tier.name} tier={tier} />
           ))}
