@@ -2,6 +2,7 @@ import Navbar from "@/components/ui/Navbar";
 import HeroSection from "@/components/ui/HeroSection";
 import PrescientSection from "@/components/ui/PrescientSection";
 import AccessModelSection from "@/components/ui/AccessModelSection";
+import HistoricalValidationSection from "@/components/ui/HistoricalValidationSection";
 import SystemCredibilitySection from "@/components/ui/SystemCredibilitySection";
 import ResearchSection from "@/components/ui/ResearchSection";
 import ContactSection from "@/components/ui/ContactSection";
@@ -19,6 +20,12 @@ export default function Home() {
       </div>
 
       <PrescientSection />
+
+      <div className="max-w-container mx-auto px-8 md:px-16">
+        <div className="w-full h-px bg-border-dark" />
+      </div>
+
+      <HistoricalValidationSection />
 
       <div className="max-w-container mx-auto px-8 md:px-16">
         <div className="w-full h-px bg-border-dark" />
