@@ -6,7 +6,7 @@
   --color-background: #f9f5ef;
   --color-background-dark: #ede9e3;
   --color-surface: #ffffff;
-  --color-surface-elevated: #f9f5ef;
+  --color-surface-elevated: #f4f0ea;
   --color-ink: #0e0e0e;
   --color-ink-muted: #3e3d3c;
   --color-ink-light: #7d7b78;
@@ -14,6 +14,22 @@
   --color-border: #e0dcd7;
   --color-border-dark: #c7c4bf;
   --color-snow: #ffffff;
+  --color-mineral-muted: #e8eeec;
+}
+
+html[data-theme="dark"] {
+  --color-background: #141413;
+  --color-background-dark: #1c1c1b;
+  --color-surface: #1c1c1b;
+  --color-surface-elevated: #242422;
+  --color-ink: #e8e6e1;
+  --color-ink-muted: #a5a29a;
+  --color-ink-light: #8a8882;
+  --color-ink-lighter: #6e6c66;
+  --color-border: #2e2e2c;
+  --color-border-dark: #3a3a38;
+  --color-snow: #141413;
+  --color-mineral-muted: #1f302a;
 }
 
 html {
@@ -27,6 +43,7 @@ body {
   color: var(--color-ink);
   font-family: "Inter", system-ui, sans-serif;
   font-weight: 300;
+  transition: background-color 300ms ease-out, color 300ms ease-out;
 }
 
 ::selection {
@@ -83,4 +100,12 @@ select:focus-visible {
 ::-moz-selection {
   background: var(--color-ink);
   color: var(--color-snow);
+}
+
+@layer base {
+  body * {
+    transition-property: background-color, border-color, color;
+    transition-duration: 300ms;
+    transition-timing-function: ease-out;
+  }
 }

@@ -34,6 +34,17 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://talavidus.com"),
 };
 
+const themeScript = `
+  (function() {
+    try {
+      const theme = localStorage.getItem('theme');
+      if (theme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    } catch (e) {}
+  })();
+`;
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -52,8 +63,9 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
+        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
-      <body className="bg-background text-ink font-sans antialiased">
+      <body className="bg-background text-ink font-sans antialiased transition-colors duration-300 ease-out">
         {children}
       </body>
     </html>

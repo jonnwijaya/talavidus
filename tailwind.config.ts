@@ -10,29 +10,29 @@ const config: Config = {
     extend: {
       colors: {
         background: {
-          DEFAULT: "#f9f5ef",
-          dark: "#ede9e3",
+          DEFAULT: "var(--color-background)",
+          dark: "var(--color-background-dark)",
         },
         surface: {
-          DEFAULT: "#ffffff",
-          elevated: "#f4f0ea",
+          DEFAULT: "var(--color-surface)",
+          elevated: "var(--color-surface-elevated)",
         },
         ink: {
-          DEFAULT: "#0e0e0e",
-          muted: "#3e3d3c",
-          light: "#7d7b78",
-          lighter: "#95938f",
+          DEFAULT: "var(--color-ink)",
+          muted: "var(--color-ink-muted)",
+          light: "var(--color-ink-light)",
+          lighter: "var(--color-ink-lighter)",
         },
         border: {
-          DEFAULT: "#e0dcd7",
-          dark: "#c7c4bf",
+          DEFAULT: "var(--color-border)",
+          dark: "var(--color-border-dark)",
         },
-        snow: "#ffffff",
+        snow: "var(--color-snow)",
         mineral: {
           DEFAULT: "#2a4b41",
           light: "#3d6358",
           dark: "#1f3a32",
-          muted: "#e8eeec",
+          muted: "var(--color-mineral-muted)",
         },
       },
       fontFamily: {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import ThemeToggle from "./ThemeToggle";
 
 const NAV_LINKS = [
   { href: "/#prescient", label: "Prescient" },
@@ -86,6 +87,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
+            <ThemeToggle />
             <a
               href="/#access"
               className="inline-flex items-center justify-center text-center font-sans h-10 px-6 text-[11px] uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink bg-ink text-white hover:bg-transparent hover:text-ink"
@@ -147,6 +149,7 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
+          <ThemeToggle />
           <a
             href="/#access"
             onClick={() => setIsOpen(false)}
