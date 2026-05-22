@@ -48,7 +48,7 @@ const TIERS = [
       "Dedicated onboarding and support",
       "Service-level agreements",
     ],
-    note: "Pricing is based on integration scope, access level, throughput, workflow requirements, onboarding, and support. Allocated by seat and tied to mandate governance.",
+    note: "Allocated by seat. Subject to compliance review and capacity constraints.",
     variant: "institutional" as const,
   },
 ];
@@ -59,7 +59,7 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
 
   return (
     <div
-      className={`flex flex-col border ${
+      className={`pricing-card flex flex-col h-full border ${
         isPremium
           ? "border-mineral bg-mineral-muted"
           : isInstitutional
@@ -67,7 +67,7 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
             : "border-border bg-surface"
       }`}
     >
-      <div className="flex flex-col flex-grow p-8 md:p-10">
+      <div className="pricing-card__content flex flex-col flex-1 p-8 md:p-10">
         {/* Header */}
         <div>
           <div className="flex items-baseline justify-between gap-4">
@@ -95,8 +95,8 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
           )}
         </div>
 
-        {/* Features — grows to push button down */}
-        <div className="flex-grow">
+        {/* Features */}
+        <div className="flex-1">
           <ul className="mt-8 space-y-3">
             {tier.features.map((feature) => (
               <li key={feature} className="flex items-start gap-3">
@@ -113,11 +113,11 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
           </ul>
         </div>
 
-        {/* Button — always at bottom */}
-        <div className="pt-10">
+        {/* CTA — pushed to bottom */}
+        <div className="pricing-card__cta mt-auto pt-10">
           <a
             href={tier.ctaHref}
-            className={`inline-flex items-center justify-center text-center font-sans h-12 w-full text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border ${
+            className={`pricing-card__button inline-flex items-center justify-center text-center font-sans h-12 w-full text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border ${
               isPremium
                 ? "border-mineral bg-mineral text-white hover:bg-transparent hover:text-mineral"
                 : isInstitutional
@@ -162,7 +162,7 @@ export default function AccessModelSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="pricing-grid grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {TIERS.map((tier) => (
             <TierCard key={tier.name} tier={tier} />
           ))}
