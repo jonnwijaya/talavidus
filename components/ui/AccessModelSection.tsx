@@ -59,7 +59,7 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
 
   return (
     <div
-      className={`flex flex-col border ${
+      className={`flex flex-col h-full border ${
         isPremium
           ? "border-mineral bg-mineral-muted"
           : isInstitutional
@@ -67,47 +67,54 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
             : "border-border bg-surface"
       }`}
     >
-      <div className="p-8 md:p-10 flex flex-col flex-grow">
-        <div className="flex items-baseline justify-between gap-4">
-          <h3
-            className={`font-serif text-2xl font-light tracking-tight ${
-              isPremium ? "text-mineral" : "text-ink"
-            }`}
-          >
-            {tier.name}
-          </h3>
-          {isPremium && (
-            <span className="text-[10px] uppercase tracking-ultra text-mineral">
-              Recommended
-            </span>
+      <div className="flex flex-col flex-grow h-full p-8 md:p-10">
+        {/* Header */}
+        <div>
+          <div className="flex items-baseline justify-between gap-4">
+            <h3
+              className={`font-serif text-2xl font-light tracking-tight ${
+                isPremium ? "text-mineral" : "text-ink"
+              }`}
+            >
+              {tier.name}
+            </h3>
+            {isPremium && (
+              <span className="text-[10px] uppercase tracking-ultra text-mineral">
+                Recommended
+              </span>
+            )}
+          </div>
+          <p className="mt-3 text-sm font-light leading-body text-ink-light">
+            {tier.tagline}
+          </p>
+
+          {tier.price && (
+            <p className="mt-6 text-sm font-medium tracking-section uppercase text-ink">
+              {tier.price}
+            </p>
           )}
         </div>
-        <p className="mt-3 text-sm font-light leading-body text-ink-light">
-          {tier.tagline}
-        </p>
 
-        {tier.price && (
-          <p className="mt-6 text-sm font-medium tracking-section uppercase text-ink">
-            {tier.price}
-          </p>
-        )}
+        {/* Features — grows to push button down */}
+        <div className="flex-grow">
+          <ul className="mt-8 space-y-3">
+            {tier.features.map((feature) => (
+              <li key={feature} className="flex items-start gap-3">
+                <span
+                  className={`mt-2 block w-1 h-1 shrink-0 ${
+                    isPremium ? "bg-mineral" : "bg-ink-light"
+                  }`}
+                />
+                <span className="text-sm font-light text-ink-light leading-relaxed">
+                  {feature}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <ul className="mt-8 space-y-3">
-          {tier.features.map((feature) => (
-            <li key={feature} className="flex items-start gap-3">
-              <span
-                className={`mt-2 block w-1 h-1 shrink-0 ${
-                  isPremium ? "bg-mineral" : "bg-ink-light"
-                }`}
-              />
-              <span className="text-sm font-light text-ink-light leading-relaxed">
-                {feature}
-              </span>
-            </li>
-          ))}
-        </ul>
-
-        <div className="mt-auto pt-10">
+        {/* Button — always at bottom */}
+        <div className="pt-10">
           <a
             href={tier.ctaHref}
             className={`inline-flex items-center justify-center text-center font-sans h-12 w-full text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border ${
@@ -155,7 +162,7 @@ export default function AccessModelSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {TIERS.map((tier) => (
             <TierCard key={tier.name} tier={tier} />
           ))}

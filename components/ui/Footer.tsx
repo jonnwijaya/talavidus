@@ -21,8 +21,8 @@ const FOOTER_LINKS = [
     title: "Legal",
     links: [
       { label: "Jurisdictions", href: "#" },
-      { label: "Risk Disclosures", href: "#" },
-      { label: "Compliance", href: "mailto:compliance@talavidus.com" },
+      { label: "Risk Disclosures", href: "/risk-disclosures" },
+      { label: "Compliance", href: "/compliance" },
     ],
   },
 ];
