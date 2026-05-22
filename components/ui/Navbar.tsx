@@ -8,6 +8,7 @@ const NAV_LINKS = [
   { href: "/#validation", label: "Validation" },
   { href: "/#research", label: "Research" },
   { href: "/#architecture", label: "Architecture" },
+  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -66,41 +67,49 @@ export default function Navbar() {
           isVisible ? "translate-y-0" : "-translate-y-full"
         } ${isAtTop ? "" : "bg-background/90 backdrop-blur-sm border-b border-border"}`}
       >
-        <div className="max-w-container mx-auto px-8 md:px-16 h-20 flex items-center justify-between">
+        <div className="max-w-container mx-auto px-8 md:px-16 h-20 flex items-center">
+          {/* Brand */}
           <a
             href="/"
-            className="font-serif text-lg tracking-wide select-none text-ink transition-colors duration-300"
+            className="shrink-0 font-serif text-lg tracking-wide select-none text-ink transition-colors duration-300"
           >
             Talavidus
           </a>
 
-          <div className="hidden lg:flex items-center gap-10">
-            <ul className="flex items-center gap-10">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-xs uppercase tracking-ultra text-ink-light transition-colors duration-300 ease-out hover:text-ink focus-visible:text-ink"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+          {/* Spacer between brand and nav */}
+          <div className="hidden lg:block w-12 xl:w-20 shrink-0" />
+
+          {/* Center nav */}
+          <nav className="hidden lg:flex items-center gap-6 xl:gap-10 flex-1 justify-center">
+            {NAV_LINKS.map((link) => (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-[11px] uppercase tracking-ultra text-ink-light transition-colors duration-300 ease-out hover:text-ink focus-visible:text-ink"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Spacer between nav and utilities */}
+          <div className="hidden lg:block w-12 xl:w-20 shrink-0" />
+
+          {/* Utilities */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <ThemeToggle />
             <a
               href="/#access"
-              className="inline-flex items-center justify-center text-center font-sans h-10 px-6 text-[11px] uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink bg-ink text-white hover:bg-transparent hover:text-ink"
+              className="inline-flex items-center justify-center text-center font-sans h-10 px-5 text-[11px] uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink bg-ink text-white hover:bg-transparent hover:text-ink"
             >
               Request Access
             </a>
           </div>
 
+          {/* Mobile hamburger */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className={`lg:hidden relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 transition-colors duration-300 ${
-              isOpen ? "text-ink" : "text-ink"
-            }`}
+            className={`lg:hidden ml-auto relative z-50 flex flex-col items-center justify-center w-10 h-10 gap-1.5 transition-colors duration-300 text-ink`}
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
@@ -123,6 +132,7 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile overlay */}
       <div
         className={`fixed inset-0 z-40 bg-background transition-all duration-500 ease-expo lg:hidden ${
           isOpen
@@ -149,7 +159,6 @@ export default function Navbar() {
               {link.label}
             </a>
           ))}
-          <ThemeToggle />
           <a
             href="/#access"
             onClick={() => setIsOpen(false)}
