@@ -13,7 +13,7 @@ const TIERS = [
       "Regime summaries and basic telemetry",
       "Community support",
     ],
-    note: "No credit card required. Unlimited duration with calibrated rate limits.",
+    note: "No credit card required. Unlimited duration.",
     variant: "light" as const,
   },
   {
@@ -48,7 +48,7 @@ const TIERS = [
       "Dedicated onboarding and support",
       "Service-level agreements",
     ],
-    note: "Allocated by seat. Subject to compliance review and capacity constraints.",
+    note: "Allocated by seat. Subject to compliance review.",
     variant: "institutional" as const,
   },
 ];
@@ -113,8 +113,8 @@ function TierCard({ tier }: { tier: (typeof TIERS)[number] }) {
           </ul>
         </div>
 
-        {/* CTA — pushed to bottom */}
-        <div className="pricing-card__cta mt-auto pt-10">
+        {/* Footer — pushed to bottom with consistent height */}
+        <div className="pricing-card__footer mt-auto flex flex-col justify-start min-h-[120px]">
           <a
             href={tier.ctaHref}
             className={`pricing-card__button inline-flex items-center justify-center text-center font-sans h-12 w-full text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border ${
