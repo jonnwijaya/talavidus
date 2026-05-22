@@ -64,7 +64,7 @@
   "rewrites": [
     {
       "source": "/dashboard/:path*",
-      "destination": "https://prescient.talavidus.com/:path*"
+      "destination": "https://prescientmacro.com/:path*"
     }
   ],
   "functions": {

@@ -60,7 +60,7 @@ export default function ProfessionalSignupPage() {
 
               <div className="mt-10">
                 <a
-                  href="https://prescient.talavidus.com/subscribe"
+                  href="https://prescientmacro.com/subscribe"
                   className="inline-flex items-center justify-center text-center font-sans h-14 bg-mineral px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-mineral text-white hover:bg-transparent hover:text-mineral"
                 >
                   Start 1-Month Trial

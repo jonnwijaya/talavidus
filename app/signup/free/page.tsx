@@ -53,7 +53,7 @@ export default function FreeSignupPage() {
 
               <div className="mt-10">
                 <a
-                  href="https://prescient.talavidus.com"
+                  href="https://prescientmacro.com"
                   className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink"
                 >
                   Create Free Account

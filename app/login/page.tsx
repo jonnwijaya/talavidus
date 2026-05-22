@@ -1,6 +1,6 @@
 /**
  * Talavidus — Login Page (Dashboard Subdomain)
- * prescient.talavidus.com/login
+ * prescientmacro.com/login
  *
  * Server-rendered login page that initiates the Supabase PKCE OAuth flow.
  */
@@ -25,7 +25,7 @@ export default async function LoginPage({
 
   const callbackUrl = process.env.NEXT_PUBLIC_DASHBOARD_URL
     ? `${process.env.NEXT_PUBLIC_DASHBOARD_URL}/api/auth/callback`
-    : 'https://prescient.talavidus.com/api/auth/callback'
+    : 'https://prescientmacro.com/api/auth/callback'
 
   const {
     data: { url },

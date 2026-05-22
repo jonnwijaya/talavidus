@@ -5,7 +5,7 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
  * Talavidus — Edge Middleware
  * Responsibilities:
  *   1. Subdomain detection (storefront vs. dashboard)
- *   2. Authentication enforcement on prescient.talavidus.com
+ *   2. Authentication enforcement on prescientmacro.com
  *   3. Cross-subdomain cookie handling for Supabase Auth
  *   4. Geoblocking (configurable)
  *   5. Rate limiting headers on API routes
@@ -44,7 +44,7 @@ function getAppContext(request: NextRequest): 'storefront' | 'dashboard' | 'unkn
     return 'storefront'
   }
 
-  if (host === 'prescient.talavidus.com') {
+  if (host === 'prescientmacro.com') {
     return 'dashboard'
   }
 
@@ -117,7 +117,7 @@ export async function middleware(request: NextRequest) {
 
       if (error || !session) {
         const loginUrl = new URL('https://talavidus.com')
-        loginUrl.searchParams.set('redirect', `https://prescient.talavidus.com${pathname}${search}`)
+        loginUrl.searchParams.set('redirect', `https://prescientmacro.com${pathname}${search}`)
         return NextResponse.redirect(loginUrl, { status: 302 })
       }
 

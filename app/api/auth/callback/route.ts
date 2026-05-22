@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
   const next = searchParams.get('next') || '/'
 
   const cookieDomain = process.env.NEXT_PUBLIC_AUTH_COOKIE_DOMAIN || '.talavidus.com'
-  const dashboardHost = process.env.NEXT_PUBLIC_DASHBOARD_URL || 'https://prescient.talavidus.com'
+  const dashboardHost = process.env.NEXT_PUBLIC_DASHBOARD_URL || 'https://prescientmacro.com'
   const storefrontHost = process.env.NEXT_PUBLIC_STOREFRONT_URL || 'https://talavidus.com'
 
   if (code) {

@@ -7,7 +7,7 @@ Corporate web presence for Talavidus — sovereign risk intelligence and macro o
 | Domain | Application | Auth Required |
 |--------|-------------|---------------|
 | `talavidus.com` | Static Storefront | No |
-| `prescient.talavidus.com` | Secure Dashboard | Yes (PKCE OAuth) |
+| `prescientmacro.com` | Secure Dashboard | Yes (PKCE OAuth) |
 
 ## Tech Stack
 
@@ -42,7 +42,7 @@ NEXT_PUBLIC_DASHBOARD_URL=http://localhost:3000
 4. For production, set:
    - `NEXT_PUBLIC_AUTH_COOKIE_DOMAIN` = `.talavidus.com`
    - `NEXT_PUBLIC_STOREFRONT_URL` = `https://talavidus.com`
-   - `NEXT_PUBLIC_DASHBOARD_URL` = `https://prescient.talavidus.com`
+   - `NEXT_PUBLIC_DASHBOARD_URL` = `https://prescientmacro.com`
 5. Deploy.
 
 ## Project Structure

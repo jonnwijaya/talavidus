@@ -8,7 +8,7 @@ import { type NextRequest, NextResponse } from 'next/server'
  * management. Use in Server Components, API routes, and Server Actions.
  *
  * Cookie configuration uses .talavidus.com domain for cross-subdomain
- * auth sharing between talavidus.com and prescient.talavidus.com.
+ * auth sharing between talavidus.com and prescientmacro.com.
  */
 
 const AUTH_COOKIE_DOMAIN = process.env.NEXT_PUBLIC_AUTH_COOKIE_DOMAIN || '.talavidus.com'

@@ -125,7 +125,7 @@ module.exports = {
     if (!IS_LOCAL_DEV) {
       redirects.push({
         source: '/dashboard/:path*',
-        destination: 'https://prescient.talavidus.com/:path*',
+        destination: 'https://prescientmacro.com/:path*',
         permanent: true,
       })
     }
