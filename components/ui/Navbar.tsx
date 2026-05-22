@@ -87,7 +87,7 @@ export default function Navbar() {
               ))}
             </ul>
             <a
-              href="/request-allocation"
+              href="/#access"
               className="inline-flex items-center justify-center text-center font-sans h-10 px-6 text-[11px] uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink bg-ink text-white hover:bg-transparent hover:text-ink"
             >
               Request Access
@@ -148,7 +148,7 @@ export default function Navbar() {
             </a>
           ))}
           <a
-            href="/request-allocation"
+            href="/#access"
             onClick={() => setIsOpen(false)}
             className="inline-flex items-center justify-center text-center font-sans h-14 bg-ink px-10 text-xs uppercase tracking-ultra transition-all duration-500 ease-expo border border-ink text-white hover:bg-transparent hover:text-ink"
             style={{
