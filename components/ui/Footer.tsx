@@ -78,7 +78,7 @@ export default function Footer() {
             solicitation to transact.
           </p>
           <a
-            href="mailto:compliance@talavidus.com"
+            href="/contact"
             className="text-xs uppercase tracking-ultra text-ink-lighter transition-colors duration-300 hover:text-ink shrink-0"
           >
             Contact

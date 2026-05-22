@@ -5,10 +5,10 @@ import ThemeToggle from "./ThemeToggle";
 
 const NAV_LINKS = [
   { href: "/#prescient", label: "Prescient" },
-  { href: "/#access", label: "Access" },
+  { href: "/#validation", label: "Validation" },
   { href: "/#research", label: "Research" },
   { href: "/#architecture", label: "Architecture" },
-  { href: "/#contact", label: "Contact" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Navbar() {
